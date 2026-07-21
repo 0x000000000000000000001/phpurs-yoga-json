@@ -1,4 +1,4 @@
-# purescript-yoga-json
+# phpurs-yoga-json
 
 `yoga-json` is a light-weight and simple json library for purescript. 
 
