@@ -85,6 +85,10 @@ workspace:
       path: "../phpurs-functions"
     integers:
       path: "../phpurs-integers"
+    js-bigints:
+      path: "../phpurs-js-bigints"
+    js-date:
+      path: "../phpurs-js-date"
     js-promise:
       path: "../phpurs-js-promise"
     js-promise-aff:
@@ -145,3 +149,5 @@ workspace:
       path: "../phpurs-uuid"
     variant:
       path: "../phpurs-variant"
+    strings-extra:
+      path: "../phpurs-strings-extra"

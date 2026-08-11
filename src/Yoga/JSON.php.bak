@@ -12,7 +12,7 @@ $undefined = $GLOBALS['__Purs_Undefined'];
 $exports['_undefined'] = $undefined;
 
 function strip_undefined($data, $undef) {
-    if ($data instanceof \GMP) { return \gmp_strval($data, 10); } if (is_object($data)) {
+    if (is_object($data)) {
         $result = new \stdClass();
         foreach ($data as $k => $v) {
             if ($v !== $undef) {
