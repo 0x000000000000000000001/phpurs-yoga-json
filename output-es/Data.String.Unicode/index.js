@@ -1,0 +1,14 @@
+import * as Control$dBind from "../Control.Bind/index.js";
+import * as Control$dSemigroupoid from "../Control.Semigroupoid/index.js";
+import * as Data$dCodePoint$dUnicode$dInternal from "../Data.CodePoint.Unicode.Internal/index.js";
+import * as Data$dCodePoint$dUnicode$dInternal$dCasing from "../Data.CodePoint.Unicode.Internal.Casing/index.js";
+import * as Data$dFunctor from "../Data.Functor/index.js";
+import * as Data$dString$dCodePoints from "../Data.String.CodePoints/index.js";
+const toLower = /* #__PURE__ */ Control$dSemigroupoid.composeImpl(/* #__PURE__ */ Control$dSemigroupoid.composeImpl(Data$dString$dCodePoints.fromCodePointArray)(a => Control$dBind.arrayBind(a)(Data$dCodePoint$dUnicode$dInternal$dCasing.lower)))(Data$dString$dCodePoints.toCodePointArray);
+const toUpper = /* #__PURE__ */ Control$dSemigroupoid.composeImpl(/* #__PURE__ */ Control$dSemigroupoid.composeImpl(Data$dString$dCodePoints.fromCodePointArray)(a => Control$dBind.arrayBind(a)(Data$dCodePoint$dUnicode$dInternal$dCasing.upper)))(Data$dString$dCodePoints.toCodePointArray);
+const toLowerSimple = /* #__PURE__ */ Control$dSemigroupoid.composeImpl(/* #__PURE__ */ Control$dSemigroupoid.composeImpl(Data$dString$dCodePoints.fromCodePointArray)(/* #__PURE__ */ Data$dFunctor.arrayMap(Data$dCodePoint$dUnicode$dInternal.uTowlower)))(Data$dString$dCodePoints.toCodePointArray);
+const toUpperSimple = /* #__PURE__ */ Control$dSemigroupoid.composeImpl(/* #__PURE__ */ Control$dSemigroupoid.composeImpl(Data$dString$dCodePoints.fromCodePointArray)(/* #__PURE__ */ Data$dFunctor.arrayMap(Data$dCodePoint$dUnicode$dInternal.uTowupper)))(Data$dString$dCodePoints.toCodePointArray);
+const caseFoldSimple = /* #__PURE__ */ Control$dSemigroupoid.composeImpl(/* #__PURE__ */ Control$dSemigroupoid.composeImpl(Data$dString$dCodePoints.fromCodePointArray)(/* #__PURE__ */ Data$dFunctor.arrayMap(Data$dCodePoint$dUnicode$dInternal$dCasing.fold)))(Data$dString$dCodePoints.toCodePointArray);
+const caseFold = /* #__PURE__ */ Control$dSemigroupoid.composeImpl(/* #__PURE__ */ Control$dSemigroupoid.composeImpl(Data$dString$dCodePoints.fromCodePointArray)(a => Control$dBind.arrayBind(a)(Data$dCodePoint$dUnicode$dInternal$dCasing.foldFull)))(Data$dString$dCodePoints.toCodePointArray);
+const caselessMatch = s1 => s2 => caseFold(s1) === caseFold(s2);
+export {caseFold, caseFoldSimple, caselessMatch, toLower, toLowerSimple, toUpper, toUpperSimple};
