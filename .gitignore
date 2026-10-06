@@ -2,6 +2,7 @@
 /node_modules/
 output/
 output.bak/
+output-es/
 /.purmeta/
 /.psc-package/
 /.psc*
